@@ -5,20 +5,20 @@
 class Code {
 
     /**
-     * Method for extracting the 'characteristic' of an inputted pseudo-floating
+     * Method for determining if the 'characteristic' of an inputted pseudo-floating
      * point char array
      * 
      * @param numString input number as a char array
-     * @param c length of numString array
-     * @return True if function success, else False
+     * @return The value that represents the component. If fail, return -0
      */
-    boolean characteristic(char numString[], int c) {
+    int characteristic(char numString[]) {
         // Declaring/Initializing variables
         int strIndex;
-        String num = ""
+        String num = "";
+        int d;
 
         // Adding each char from list into a string
-        for ( strIndex = 0; strIndex < c; strIndex++ ) {
+        for ( strIndex = 0; strIndex < numString.length; strIndex++ ) {
           num += numString[strIndex];
         }
 
@@ -26,13 +26,13 @@ class Code {
         num = num.replaceAll("\\s", "");
 
         try {
-          double d = Double.parseDouble(num);
+          d = (int) Double.parseDouble(num);
         } 
         catch (NumberFormatException nfe) {
-          return false;
+          return -0;
         }
-
-        return true;
+        
+        return d;
     }
 
     /**
@@ -42,9 +42,9 @@ class Code {
      * @param numString   input number as char array
      * @param numerator
      * @param denominator
-     * @return True if success, else False
+     * @return the value that represents the mantissa
      */
-    boolean mantissa(char numString[], int numerator, int denominator) {
+    int mantissa(char numString[], int numerator, int denominator) {
 
     }
 
