@@ -9,11 +9,30 @@ class Code {
      * point char array
      * 
      * @param numString input number as a char array
-     * @param c         length of numString array
+     * @param c length of numString array
      * @return True if function success, else False
      */
     boolean characteristic(char numString[], int c) {
+        // Declaring/Initializing variables
+        int strIndex;
+        String num = ""
 
+        // Adding each char from list into a string
+        for ( strIndex = 0; strIndex < c; strIndex++ ) {
+          num += numString[strIndex];
+        }
+
+        // Removes whitespace from string
+        num = num.replaceAll("\\s", "");
+
+        try {
+          double d = Double.parseDouble(num);
+        } 
+        catch (NumberFormatException nfe) {
+          return false;
+        }
+
+        return true;
     }
 
     /**
