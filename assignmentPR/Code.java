@@ -34,7 +34,7 @@ class Code {
      */
     int mantissa(String numString) {
 
-        int mantessa = -0;
+        int mantissa = -0;
 
         try {
             mantessa = Integer.parseInt(numString.split(".")[1]);
@@ -42,7 +42,7 @@ class Code {
             System.out.println(nfe);
         }
 
-        return mantessa;
+        return mantissa;
     }
 
     public static void main(String[] args) {
@@ -53,7 +53,7 @@ class Code {
         char[] chars = number.toCharArray();
 
         for (char c : chars){
-            if(Character.isDigit(c)){
+            if(!Character.isDigit(c)){
                 // Do something if any of the character values are NOT valid numbers
             } else {
                 // Do something if all is okay
